@@ -1,0 +1,66 @@
+<% replace_column_names = {} if replace_column_names.nil? %>
+<% omit_columns = [] if omit_columns.nil? %>
+<% show_link = true if show_link.nil? %>
+<% edit_link = true if edit_link.nil? %>
+<% delete_link = true if delete_link.nil? %>
+<% exclude_creation_date = true if exclude_creation_date.nil? %>
+<thead>
+<tr>
+  <% active_record_class.column_names.each do |column_name| %>
+      <% next if column_name == "id" or (column_name == "created_at" and exclude_creation_date) or column_name == "updated_at" or omit_columns.include? column_name %>
+      <% if replace_column_names[column_name.intern].nil? %>
+          <th><%= h ActiveRecord::Base.human_attribute_name(column_name) %></th>
+      <% else %>
+          <th><%= h replace_column_names[column_name.intern] %></th>
+      <% end %>
+  <% end %>
+  <% if edit_link or delete_link or show_link %>
+      <th class="actions">Actions</th>
+  <% else %>
+      <th class="actions"></th>
+  <% end %>
+</tr>
+</thead>
+
+<% cols = active_record_class.column_names.count - 2 %>
+
+<% if active_records.count > 0 %>
+    <% active_records.each do |active_record| %>
+        <tr class="<%= cycle('list-line-odd', 'list-line-even') %>">
+          <% active_record_class.column_names.each do |column_name| %>
+              <% next if column_name == "id" or (column_name == "created_at" and exclude_creation_date) or column_name == "updated_at" or omit_columns.include? column_name %>
+              <td>
+                <% if column_name == 'stream_format_type_id' and !active_record.attributes[column_name].nil? # Streamer types  %>
+                    <%= h StreamFormatType.find(active_record.attributes[column_name]).name %>
+                <% else %>
+                    <%= h active_record.attributes[column_name] %>
+                <% end %>
+              </td>
+          <% end %>
+
+          <td class="actions">
+            <div class="col1">
+              <% if show_link %>
+                  <%= link_to 'Show', active_record %>
+              <% end %>
+            </div>
+            <div class="col2">
+              <% if edit_link %>
+                  <%= link_to 'Edit', :action => "edit", :id => active_record.id %>
+              <% end %>
+            </div>
+            <div class="col3">
+              <% if delete_link %>
+                  <%= link_to 'Delete', active_record, :confirm => 'Are you sure?', :method => :delete %>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+    <% end %>
+<% else %>
+    <tr>
+      <td colspan="<%= cols %>">
+        <h3>No Records Found</h3>
+      </td>
+    </tr>
+<% end %>

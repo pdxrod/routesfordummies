@@ -1,0 +1,41 @@
+source 'https://rubygems.org'
+
+# https://gist.github.com/2515536
+# Slight mistake - don't ./rails/railties/bin/rails new ...
+
+# http://stackoverflow.com/questions/2425676/rvm-1-9-1-nokogiri
+# brew install libxml2
+# brew link libxml2
+# gem install nokogiri -- --with-xml2-include=/usr/local/Cellar/libxml2/2.7.8/include/libxml2
+#   --with-xml2-lib=/usr/local/Cellar/libxml2/2.7.8/lib --with-xslt-dir=/usr/local/Cellar/libxslt/1.1.26
+
+gem 'rails',     path: '../../../../rails'
+#gem 'journey',   github: 'rails/journey'
+gem 'journey'
+gem 'arel',      github: 'rails/arel'
+gem 'active_record_deprecated_finders', github: 'markmcspadden/active_record_deprecated_finders'
+
+gem 'will_paginate', '~> 3.0'
+gem 'rspec-rails'
+gem "factory_girl_rails"
+gem 'hpricot'
+gem 'libxml-ruby' 
+gem 'logger'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sprockets-rails', github: 'rails/sprockets-rails'
+  gem 'sass-rails',   github: 'rails/sass-rails'
+  gem 'coffee-rails', github: 'rails/coffee-rails'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+group :development, :test do
+  gem 'webrat' 
+end
+
+gem 'jquery-rails'
+gem 'therubyracer'
+#gem 'routesfordummies', path: './routesfordummies-0.0.1.gem'
+#gem 'routesfordummies', '0.0.1', :require => 'routesfordummies', :path => '/home/subcrypt/www/routesfordummies/spec/rockonruby'

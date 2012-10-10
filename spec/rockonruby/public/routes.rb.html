@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  
+  <link href="/stylesheets/rockonruby.css" media="screen" rel="stylesheet" />
+  <title>Rock on Ruby</title>
+  
+</head>
+<body>         
+
+ <fieldset>	
+ <br/> <a href="/">Back</a> <br/> <br/>   
+	
+ <table border="0" cellpadding="3" width="90%">
+	
+	<tr>
+	<td bgcolor="#011001"><span style="color: #1fff9f;"><xmp>Rockonruby::Application.routes.draw do 
+  
+   root :to => 'main#index' 
+                            
+# How to expand this to cover all possible URLs with up to 5 /'s and an optional parameters list after the ? 
+   get 'old/:version/:scope'               => 'old#an_action' 
+   get 'old/:version/:object/:id/:scope'     => 'old#an_action' 
+   get 'old/:version/:scope/:id/media.:format' => 'old#an_action'
+
+# /new/foo/bar/fubar/ /new/foo/bar/fubar/snafu /new/foo etc. 
+   get 'new/:a'        => 'new#an_action'
+   get 'new/:a/:b'        => 'new#an_action'
+   get 'new/:a/:b/:c'        => 'new#an_action'
+   get 'new/:a/:b/:c/:d'        => 'new#an_action'
+   get 'new/:a/:b/:c/:d/:e'        => 'new#an_action' 
+ 
+  # get '/:controller(/:action(/:id))' 
+
+end
+    </xmp>                                              
+    </td></tr></table>  
+
+ </fieldset>   
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+<div><br/> <a href="/">Back</a> <br/> <br/></div>      
+
+<div><br/><%= "#{request.protocol}#{request.host_with_port}#{request.fullpath}" %><br/></div>
+<br/>
+
+<table>
+	                          
+  <tr><td/></tr>                                                                 
+	
+  <% @params.each do |k, v|  %>                                                    
+    <tr>                      
+      <td><%= k %> => <%= v %></td>                                              
+    </tr>                                                                        
+  <% end %>   
+                                                                                                  
+</table>
+           

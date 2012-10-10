@@ -1,0 +1,4 @@
+#!/bin/sh
+
+bundle exec rails s -p 3002 &
+

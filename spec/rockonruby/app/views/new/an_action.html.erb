@@ -1,0 +1,43 @@
+<div><br/> <a href="/">Back</a> <br/> <br/></div>      
+
+<div><br/><%= request.fullpath %><br/></div>
+<br/>
+
+Params:<br/>	
+<table> 
+					  
+  <tr><td/></tr>                                                                                                                                                           
+  <% @params.each do |k, v|  %>                                                                   
+    <tr>                      
+            <td><%= k %> => <%= v %></td>                                              
+    </tr>                                                                        
+  <% end %>   
+
+</table>
+<br/>
+
+Params to array:<br/>
+<table> 
+					  
+  <tr><td/></tr>                                                                                                                                                           
+  <% @array.each_with_index do |a, i|  %>                                                                   
+    <tr>                      
+	    <td><%= i %> => <%= a %></td>                                             
+    </tr>                                                                        
+  <% end %>   
+
+</table>
+<br/>
+
+Params to hash:<br/>
+<table> 
+					  
+  <tr><td/></tr>                                                                                                                                                           
+  <% @hash.each do |k, v|  %>                                                                   
+    <tr>                      
+            <td><%= k %> => <%= v %></td>                                              
+    </tr>                                                                        
+  <% end %>   
+
+</table>
+
