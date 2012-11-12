@@ -1,0 +1,216 @@
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation"}
+  Rendered new/an_action.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 54ms (Views: 53.8ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+  Rendered new/an_action.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#put_action as HTML
+  Parameters: {"what"=>"449", "a"=>"foo", "b"=>"put"}
+  Rendered new/put_action.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 60ms (Views: 59.0ms)
+Processing by NewController#post_action as HTML
+  Parameters: {"what"=>"-449", "a"=>"foo", "b"=>"post"}
+  Rendered new/post_action.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.8ms)
+Processing by NewController#delete_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"delete"}
+  Rendered new/delete_action.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.8ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"post"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+  Rendered new/an_action.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 20ms (Views: 20.0ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 3ms (Views: 3.2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 3ms (Views: 3.0ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation"}
+  Rendered new/an_action.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 26ms (Views: 25.1ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+  Rendered new/an_action.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 32ms (Views: 32.3ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#put_action as HTML
+  Parameters: {"what"=>"490", "a"=>"foo", "b"=>"put"}
+  Rendered new/put_action.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 60ms (Views: 59.9ms)
+Processing by NewController#post_action as HTML
+  Parameters: {"what"=>"-490", "a"=>"foo", "b"=>"post"}
+  Rendered new/post_action.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms)
+Processing by NewController#delete_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"delete"}
+  Rendered new/delete_action.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.5ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"post"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+  Rendered new/an_action.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 28ms (Views: 27.2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 2ms (Views: 2.1ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 2ms (Views: 2.2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation"}
+  Rendered new/an_action.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 47ms (Views: 46.9ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+  Rendered new/an_action.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#put_action as HTML
+  Parameters: {"what"=>"418", "a"=>"foo", "b"=>"put"}
+  Rendered new/put_action.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 62ms (Views: 61.1ms)
+Processing by NewController#post_action as HTML
+  Parameters: {"what"=>"-418", "a"=>"foo", "b"=>"post"}
+  Rendered new/post_action.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.5ms)
+Processing by NewController#delete_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"delete"}
+  Rendered new/delete_action.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.7ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"post"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+  Rendered new/an_action.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 21ms (Views: 20.6ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 2ms (Views: 2.2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 3ms (Views: 2.4ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation"}
+  Rendered new/an_action.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 54ms (Views: 53.9ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+  Rendered new/an_action.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.9ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#put_action as HTML
+  Parameters: {"what"=>"405", "a"=>"foo", "b"=>"put"}
+  Rendered new/put_action.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 62ms (Views: 61.1ms)
+Processing by NewController#post_action as HTML
+  Parameters: {"what"=>"-405", "a"=>"foo", "b"=>"post"}
+  Rendered new/post_action.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms)
+Processing by NewController#delete_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"delete"}
+  Rendered new/delete_action.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"post"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+  Rendered new/an_action.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 26ms (Views: 25.3ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 3ms (Views: 2.8ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 3ms (Views: 2.8ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation"}
+  Rendered new/an_action.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 49ms (Views: 48.3ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+  Rendered new/an_action.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#put_action as HTML
+  Parameters: {"what"=>"247", "a"=>"foo", "b"=>"put"}
+  Rendered new/put_action.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 61.4ms)
+Processing by NewController#post_action as HTML
+  Parameters: {"what"=>"-247", "a"=>"foo", "b"=>"post"}
+  Rendered new/post_action.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.6ms)
+Processing by NewController#delete_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"delete"}
+  Rendered new/delete_action.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 3.1ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"post"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+  Rendered new/an_action.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 25ms (Views: 24.9ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 2ms (Views: 2.1ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 2ms (Views: 2.0ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation"}
+  Rendered new/an_action.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 54ms (Views: 53.9ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+  Rendered new/an_action.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "f"=>"situation", "g"=>"normal"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#put_action as HTML
+  Parameters: {"what"=>"61", "a"=>"foo", "b"=>"put"}
+  Rendered new/put_action.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 61ms (Views: 60.1ms)
+Processing by NewController#post_action as HTML
+  Parameters: {"what"=>"-61", "a"=>"foo", "b"=>"post"}
+  Rendered new/post_action.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3ms (Views: 2.7ms)
+Processing by NewController#delete_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"delete"}
+  Rendered new/delete_action.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3ms (Views: 2.5ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"a"=>"foo", "b"=>"post"}
+Completed 500 Internal Server Error in 0ms
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+  Rendered new/an_action.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 24ms (Views: 24.0ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 3ms (Views: 2.8ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu", "g"=>"situation"}
+Completed 200 OK in 2ms (Views: 2.0ms)

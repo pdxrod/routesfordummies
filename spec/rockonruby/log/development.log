@@ -1,0 +1,86 @@
+Processing by MainController#index as HTML
+Compiled rockonruby.css  (0ms)  (pid 26868)
+Compiled prototype.js  (2ms)  (pid 26868)
+Compiled rails.js  (0ms)  (pid 26868)
+Completed 200 OK in 117ms (Views: 116.6ms)
+Served asset /rails.js - 200 OK (3ms)
+Served asset /prototype.js - 200 OK (3ms)
+Served asset /rockonruby.css - 200 OK (2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+Completed 200 OK in 8ms (Views: 7.3ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 4ms (Views: 4.3ms)
+Processing by DummyController#an_action as HTML
+  Parameters: {"bar"=>"foo", "a"=>"one", "b"=>"two", "c"=>"hello", "d"=>"world", "e"=>"bar", "f"=>"fubar", "g"=>"snafu", "h"=>"snafu"}
+Completed 200 OK in 8ms (Views: 8.0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 39ms (Views: 38.9ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+Completed 200 OK in 9ms (Views: 8.8ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 41ms (Views: 40.9ms)
+Served asset /rockonruby.css - 304 Not Modified (28ms)
+Served asset /rails.js - 304 Not Modified (1ms)
+Served asset /prototype.js - 304 Not Modified (2ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+Completed 200 OK in 9ms (Views: 8.5ms)
+Served asset /rockonruby.css - 304 Not Modified (0ms)
+Served asset /prototype.js - 304 Not Modified (0ms)
+Served asset /rails.js - 304 Not Modified (0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 38ms (Views: 38.2ms)
+Served asset /rockonruby.css - 304 Not Modified (2ms)
+Served asset /prototype.js - 304 Not Modified (3ms)
+Served asset /rails.js - 304 Not Modified (3ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+Completed 200 OK in 9ms (Views: 9.1ms)
+Served asset /rockonruby.css - 304 Not Modified (0ms)
+Served asset /rails.js - 304 Not Modified (0ms)
+Served asset /prototype.js - 304 Not Modified (0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 6ms (Views: 5.9ms)
+Served asset /rockonruby.css - 200 OK (0ms)
+Served asset /prototype.js - 200 OK (0ms)
+Served asset /rails.js - 200 OK (0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 118ms (Views: 114.7ms)
+Served asset /rockonruby.css - 304 Not Modified (1ms)
+Served asset /prototype.js - 200 OK (1ms)
+Served asset /rails.js - 304 Not Modified (0ms)
+Processing by NewController#an_action as HTML
+  Parameters: {"foo"=>"bar", "situation"=>"normal", "a"=>"foo", "b"=>"bar", "c"=>"fubar", "d"=>"snafu", "e"=>"snafu"}
+Completed 200 OK in 11ms (Views: 10.0ms)
+Served asset /rockonruby.css - 304 Not Modified (0ms)
+Served asset /rails.js - 304 Not Modified (0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 9ms (Views: 9.0ms)
+Served asset /rockonruby.css - 304 Not Modified (0ms)
+Served asset /rails.js - 304 Not Modified (0ms)
+Processing by DummyController#an_action as HTML
+  Parameters: {"bar"=>"foo", "a"=>"one", "b"=>"two", "c"=>"hello", "d"=>"world", "e"=>"bar", "f"=>"fubar", "g"=>"snafu", "h"=>"snafu"}
+Completed 200 OK in 19ms (Views: 18.5ms)
+Served asset /rockonruby.css - 304 Not Modified (0ms)
+Served asset /rails.js - 304 Not Modified (0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 9ms (Views: 9.1ms)
+Served asset /rockonruby.css - 304 Not Modified (0ms)
+Served asset /rails.js - 304 Not Modified (0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 83ms (Views: 81.3ms)
+Served asset /rockonruby.css - 200 OK (0ms)
+Served asset /prototype.js - 200 OK (1ms)
+Served asset /rails.js - 200 OK (1ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 235ms (Views: 235.3ms)
+Served asset /rockonruby.css - 200 OK (0ms)
+Served asset /prototype.js - 200 OK (0ms)
+Served asset /rails.js - 200 OK (0ms)
+Processing by MainController#index as HTML
+Completed 200 OK in 11ms (Views: 10.9ms)
+Served asset /rockonruby.css - 304 Not Modified (0ms)
+Served asset /prototype.js - 304 Not Modified (0ms)
+Served asset /rails.js - 304 Not Modified (0ms)
