@@ -1,0 +1,110 @@
+<table><tr>
+
+<td/>
+
+<td id='blocked' valign='top' align='left' >
+
+  <ul><ul>
+   <br /><center><b><a href="http://rubyonrails.org"><h3>A Ruby on Rails version <%= Rails.version %> app</h3></a></b></center>
+   <br /> This website illustrates using the Rubygem <b>'routesfordummies'</b>. 
+          Try clicking on this:     <br /><b><a href="<%= NEW_PATH %>"><%= NEW_PATH %></a></b>
+   <br /><br /> compared with this: <br /><b><a href="<%= OLD_PATH %>"><%= OLD_PATH %></a></b> 
+   <br />
+   <br />          
+                 
+   Look at the <b>routes.rb</b> file, and see if you can work out a URL beginning with <b>'/old'</b> which <i>DOES</i> work:     
+		<table border="0" cellpadding="3">
+		
+		<tr>
+		<td bgcolor="#011001"><span style="color: #1fff9f;"><xmp>  
+		  get 'old/:version/:scope'               => 'old#an_action'                  
+		  get 'old/:version/:media/:id/:scope'      => 'old#an_action'     
+		  get 'old/:version/:scope/:id/media.:format' => 'old#an_action'
+		</xmp>                                              
+		</td></tr></table> 
+            
+	 	   The above is a genuine example from a production app I worked on. 
+            <br /> It's a small section of a very complex <b>routes.rb</b> file. 
+	   
+            <br /> 
+            <br /> Testing controllers is more difficult than it need be with <b>routes.rb</b>. 
+            <br /> The combination of complex patterns in <b>routes.rb</b> and checking the contents of
+            <br /> the <b>params</b> hash in your controllers' public methods means you are
+            <br /> testing two independent things at the same time - this is not a good idea. 
+            <br /> If they are both wrong, your test might pass. 
+            <br /> 
+            <br /> Imagine a Test::Unit functional test for the <b>old_controller</b>. Suppose the <b>params</b> hash contains
+            <br /> <b>:scope => 'foo', :media => ''</b>
+            <br /> Which of the three 'get' actions listed in the section of <b>routes.rb</b> above was called?
+            <br /> It's difficult to tell. The real world example I referred to is much more complicated than this. 
+            <br /> 
+
+            <br /> <b>'routesfordummies'</b> is an attempt at a solution to this complexity. The basic idea is to put all
+            <br /> the URL-logic in one place, in a controller action, and virtually nothing in <b>routes.rb</b>.	
+	    <br />
+	    <br />
+	    This is the section of <b>routes.rb</b> for URLs beginning with <b>'/new':</b>	      
+		<table border="0" cellpadding="3">   
+	 
+		<tr>
+		<td bgcolor="#011001"><span style="color: #1fff9f;"><xmp>
+                      get 'new/:a'        => 'new#an_action'
+                      get 'new/:a/:b'        => 'new#an_action'
+                      get 'new/:a/:b/:c'        => 'new#an_action'
+                      get 'new/:a/:b/:c/:d'        => 'new#an_action'
+                      get 'new/:a/:b/:c/:d/:e'        => 'new#an_action'   
+		 </xmp>                                              
+		 </td></tr></table>   
+		 It's much simpler.
+		 <br />
+		 <br />
+		 <b><a href="/routes.rb.html">The full routes.rb file is here</a></b>
+		 <br />
+		 <br />
+
+		 And here's a section of a controller using <b>'routesfordummies'</b>:
+	         <table border="0" cellpadding="3">   
+		 <tr>
+	 	 <td bgcolor="#011001"><span style="color: #1fff9f;"><xmp>  require 'routesfordummies'
+  include Routesfordummies
+  class NewController < ApplicationController
+    def an_action
+      @array = url2array  
+      @hash = params2hash 
+   # Error checking 
+      raise "The first part of the URL after '/new/' should be 'foo'!!!'" unless @array[ 0 ] == 'foo'
+      raise "The parameter list should include 'situation'!!!" unless @hash.keys.include? 'situation'
+   # Select private methods to call based on what is in the url and the parameters
+      ...
+    end      
+  private
+     ...
+ end		 </xmp>                                              
+		 </td></tr></table>   
+
+<br/><br/>
+Finally, here's config/initializers/<b>routesfordummies_initializer.rb</b> 
+which sets up routes when the app starts, using the <b>routesfordummies</b> gem:
+<table border="0" cellpadding="3">
+                 <tr>
+                 <td bgcolor="#011001"><span style="color: #1fff9f;"><xmp>  require 'routesfordummies'
+  include Routesfordummies
+  insertabcdroutes( :verb => 'get', :app => 'Rockonruby', :controller => 'dummy', :action => 'an_action' )   </xmp>
+                 </td></tr></table>
+   <br />Try this: <b><a href="<%= DUMMY_PATH %>"><%= DUMMY_PATH %></a></b>,
+   <br />or any other URL beginning <b>/dummy/</b>,
+         followed by at least one word, and optional parameters.
+   <br />
+   <br />All that is needed is to add to the <b>'an_action'</b> method in <b>dummy_controller.rb</b> 
+   <br />url and parameter checking, then calls to private methods based on the url and the parameters.
+   <br />This is a lot easier than maintaining the <b>routes.rb</b> file.		
+   <br />
+   <br />
+   </ul></ul>
+
+</td>
+   <br />
+</tr></table>
+
+
+

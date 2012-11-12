@@ -1,0 +1,46 @@
+<!-- This logic displays active record attributes in relational column definition order. -->
+<% replace_column_names = {} if replace_column_names.nil? %>
+<% disabled_columns = [] if disabled_columns.nil? %>
+<% omit_columns = [] if omit_columns.nil? %>
+<% active_record.class.column_names.each do |column_name| %>
+    <% next if column_name == "id" or column_name == "created_at" or column_name == "updated_at" or omit_columns.include? column_name%>
+
+    <% if replace_column_names[column_name.intern].nil? %>
+        <dt style="line-height: 0.85em;"><%= h form.label ActiveRecord::Base.human_attribute_name(column_name)+":" %></dt>
+    <% else %>
+        <dt><%= h replace_column_names[column_name.intern]+":" %></dt>
+    <% end %>
+
+    <% disabled = false %>
+    <% if disabled_columns.include? column_name.intern %>
+        <% disabled = true %>
+    <% end %>
+
+    <% if active_record.class.columns_hash[column_name].type == :boolean %>
+        <dd><%= h form.check_box(column_name.intern, {}, "true", "false") %> </dd>
+    <% elsif column_name == "default_currency_id" %> <!-- used in app_configs -->
+        <dd><%= form.collection_select(:default_currency_id, @currency, :id, :full_currency, :prompt => true) %></dd>
+    <% elsif column_name == "mpaa_adult_catalog_severity" %> <!-- used in app_configs -->
+        <dd><%= form.collection_select(:mpaa_adult_catalog_severity, @mpaa_ratings, :severity, :value,
+                                  :prompt => "please select default mpaa rating") %></dd>
+    <% elsif column_name == "default_user_mpaa_rating" %> <!-- used in app_configs -->
+        <dd><%= form.collection_select(:default_user_mpaa_rating, @mpaa_ratings, :severity, :value,
+                                  :prompt => "please select default mpaa rating for new users") %></dd>
+    <% elsif column_name == "tv_adult_catalog_severity" %> <!-- used in app_configs -->
+        <dd><%= form.collection_select(:tv_adult_catalog_severity, @tv_ratings, :severity, :value,
+                                  :prompt => "please select default tv rating") %></dd>
+    <% elsif column_name == "default_user_tv_rating" %> <!-- used in app_configs -->
+        <dd><%= form.collection_select(:default_user_tv_rating, @tv_ratings, :severity, :value,
+                                  :prompt => "please select default tv rating for new users") %></dd>
+    <% elsif column_name == "stream_format_type_id" %> <!-- used in stream types -->
+        <dd><%= form.collection_select(:stream_format_type_id, StreamFormatType.all, :id, :name, :prompt => true) %></dd>
+    <% elsif column_name == "password_attempt_limit" %> <!-- used in app_configs -->
+        <dd><%= form.select(:password_attempt_limit, ([["No limit",0], [1,1], [2,2], [3,3], [4,4], [5,5], [10,10], [20,20]] )
+) %></dd>
+    <% elsif column_name == "pin_attempt_limit" %> <!-- used in app_configs -->
+        <dd><%= form.select(:pin_attempt_limit, ([["No limit",0], [1,1], [2,2], [3,3], [4,4], [5,5], [10,10], [20,20]] )
+) %></dd>
+    <% else %>
+        <dd><%= h form.text_field column_name.intern, :disabled => disabled %></dd>
+    <% end %>
+<% end %>
