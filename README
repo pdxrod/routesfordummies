@@ -1,3 +1,6 @@
 The tests for this gem are located in spec/rockonruby - cd into that folder and run 'runtests.sh'
+
 Rockonruby is a working Rails 4 application using Routesfordummies - to run it, run 'startup.sh'
+
+This site, showing how to use the routesfordummies gem, is at http://rockonruby.com
 

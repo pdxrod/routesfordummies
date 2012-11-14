@@ -1,7 +1,6 @@
 NEW_PATH =     "/new/foo/bar/fubar/snafu/snafu?foo=bar&situation=normal"
 OLD_PATH =     "/old/foo/bar/fubar/snafu/snafu?foo=bar&situation=normal"
 DUMMY_PATH =   "/dummy/one/two/hello/world/bar/fubar/snafu/snafu?bar=foo"
-TMPFILE_PATH = "/tmp/routesfordummiesfile.tmp"
 
 routesfordummies = File.expand_path '../../lib/routesfordummies.rb'
 if File.exists? routesfordummies
