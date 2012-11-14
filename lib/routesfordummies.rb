@@ -63,6 +63,9 @@ Takes either
  - a string - in which case it treats it as request.fullpath - eg. "/posts/1/edit", or
  - a hash and a string, as specified above, in either order
 Any other combination of parameters causes an error
+It returns a hash of parameters - GET or POST
+If there are POST params, they override the GET params in the return value(it is possible to have both)
+Eg. if /foo/?a=a_value gets a POST request with 'a' => 'another_value', the return hash will have 'a' set to 'another_value', not 'a_value'
 PARAMS_ERR_END
   def params2hash( *paths ) 
     path, params = analyze( paths )
@@ -106,10 +109,11 @@ PARAMS_ERR_END
         end
       end 
     end
+    if (defined?( request ) and defined?( request.POST ))
+      request.POST.each { |k, v| hsh[ k ] = v }
+    end
     return arr, hsh
   end
-
-
 	  
 end
 

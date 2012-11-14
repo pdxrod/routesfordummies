@@ -11,7 +11,7 @@ puts " request.POST = #{request.POST}, request.GET = #{request.GET}\n"
 
     raise "array[ 0 ] should be 'foo' not '#{ @array[ 0 ]}'" unless @array[ 0 ] == 'foo'
     raise "params[ 'a' ] should be 'foo' not '#{ @params[ 'a' ]}'" unless @params[ 'a' ] == 'foo'
-    raise "hash[ 'a' ] should be 'not_foo' not '#{ @hash[ 'a' ]}'" unless @hash[ 'a' ] == 'not_foo'
+    raise "hash[ 'a' ] should be 'not_foo' not '#{ POSTS_PARAM }'" unless @hash[ 'a' ] == POSTS_PARAM
 
   end       
 
