@@ -15,7 +15,7 @@ class RestfulverbTest < ActionDispatch::IntegrationTest
 # of the URL, and 'still_not_foo' (from the POST params). They should be treated differently. 
   def test_should_show_put_post_params_get_read_separately_from_url_params
     post POSTS_PATH, POSTS_PARAMS 
-
+# Look at posts_controller - it errs if the three values of 'a' are not different
   end
 
   def test_should_show_put_post_and_delete

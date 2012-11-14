@@ -11,8 +11,9 @@ ABCDEG_PATH =       "/new/foo/bar/fubar/snafu/snafu/situation?situation=normal"
 ABCDEFG_PATH =      "/new/foo/bar/fubar/snafu/snafu/situation/normal?situation="
 ABCDEFG_NO_PARAMS = "/new/foo/bar/fubar/snafu/snafu/situation/normal"
 TMPFILE_PATH = "/tmp/routesfordummiesfile.tmp"
-POSTS_PATH = "posts/foo/bar?a=not_foo" 
-POSTS_PARAMS = {:a => 'still_not_foo'}
+POSTS_PATH = "posts/foo/bar?a=not_foo"
+POSTS_PARAM = 'still_not_foo' 
+POSTS_PARAMS = {:a => POSTS_PARAM}
 
 PUT_PATH =          "/new/foo/put"
 POST_PATH =         "/new/foo/post"

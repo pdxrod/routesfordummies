@@ -50,22 +50,45 @@ DOT = '.'
   def url2array( *paths ) # Splits a url - eg. /new/my/url?param=hello produces ['my', 'url']
     path = (paths.size > 0 ? paths[ 0 ] : nil)
     path = request.fullpath if path.nil? # Useful for testing - you can give it a path - but in a controller it can find request.fullpath
-    arr, hsh = arrayandhash( path )
+    arr, hsh = arrayandhash( path, {} )
     arr = [] if arr.nil? or arr.size < 2
     arr = arr[ 2 .. -1 ] if arr.size > 1 # Remove the controller name, eg. '/new/foo/bar' becomes ['foo', 'bar'] 
     arr
   end	  	  
 
-  def params2hash( *paths ) # Gets the parameters of a url as a hash - eg. /new/my/url?foo=&bar=2 produces {'foo' => '', 'bar' => '2'}
-    path = (paths.size > 0 ? paths[ 0 ] : nil)
+PARAMS_ERR = <<-PARAMS_ERR_END
+Takes either
+ - no parameters - in which case it looks at request.fullpath
+ - a hash - in which case it treats it as if it is hash 'params' in a controller, and finds request.fullpath
+ - a string - in which case it treats it as request.fullpath - eg. "/posts/1/edit", or
+ - a hash and a string, as specified above, in either order
+Any other combination of parameters causes an error
+PARAMS_ERR_END
+  def params2hash( *paths ) 
+    path, params = analyze( paths )
     path = request.fullpath if path.nil? # Useful for testing - you can give it a path - but in a controller it can find request.fullpath
-    arr, hsh = arrayandhash( path )
+    arr, hsh = arrayandhash( path, params )
     hsh
   end
 
  private
 
-  def arrayandhash( path )
+  def analyze( paths )
+    raise PARAMS_ERR unless paths.size == 0 or paths.size == 1 or paths.size == 2
+    hashes = []
+    strings = []
+    paths.each do |path| # Find 0 or 1 hashes, and 0 or 1 strings, but raise error if there are more
+      raise PARAMS_ERR if hashes.size > 0 and path.class == Hash 
+      hashes[ 0 ] = path if path.class == Hash
+      raise PARAMS_ERR if strings.size > 0 and path.class == String
+      strings[ 0 ] = path if path.class == String
+    end
+    hashes[ 0 ] = nil if hashes.size < 1 
+    strings[ 0 ] = nil if strings.size < 1
+    return strings[ 0 ], hashes[ 0 ]
+  end
+
+  def arrayandhash( path, params )
     arr = []
     hsh = {}
     raise "This method requires a URL string as a parameter - use method request.fullpath in a controller to find it" if path.nil?
