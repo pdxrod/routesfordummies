@@ -82,9 +82,9 @@ PARAMS_ERR_END
     strings = []
     paths.each do |path| # Find 0 or 1 hashes, and 0 or 1 strings, but raise error if there are more
       raise PARAMS_ERR if hashes.size > 0 and path.class == Hash 
-      hashes[ 0 ] << path if path.class == Hash
+      hashes << path if path.class == Hash
       raise PARAMS_ERR if strings.size > 0 and path.class == String
-      strings[ 0 ] << path if path.class == String
+      strings << path if path.class == String
     end
     hashes[ 0 ] = nil if hashes.size < 1 
     strings[ 0 ] = nil if strings.size < 1
