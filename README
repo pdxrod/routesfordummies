@@ -18,5 +18,5 @@ Gemfile.lock		Rakefile		activerecord		install.rb		tasks
 RAILS_VERSION		actionmailer		activesupport		load_paths.rb		tools
 README.rdoc		actionpack		ci			rails.gemspec		version.rb
 
-(see config/application.rb and spec/rockonruby/spec/spec_helper.rb for the use of ENV['RAILS_ROOT'])
+(see config/application.rb, spec/rockonruby/Gemfile and spec/rockonruby/spec/spec_helper.rb for the use of ENV['RAILS_ROOT'])
 
