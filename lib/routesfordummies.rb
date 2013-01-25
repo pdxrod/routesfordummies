@@ -3,6 +3,8 @@ module Routesfordummies
 SLASH = '/'
 COLON = ':'
 DOT = '.'
+OPEN_P = '('
+CLOSE_P = ')'
 
 # Thanks http://openhood.com/rails/rails%203/2010/07/20/add-routes-at-runtime-rails-3/
 # :app => Your application as a string - eg. 'Rockonruby'
@@ -20,18 +22,18 @@ DOT = '.'
     app = hash[:app].constantize 
     con = hash[:controller]
     act = hash[:action]
-    str = ':a'
+    str = '(:a)'
     chr = 96.chr
     rts = { }
-#   get 'new/:a'        => 'new#an_action'
-#   get 'new/:a/:b'     => 'new#an_action'
-# etc.
+    pat = ''
+#   get 'new/(:a)/(:b)'     => 'new#an_action'
     until chr == 'y'
       chr = (chr.ord + 1).chr
-      str = str + SLASH + COLON + chr unless chr == 'a' 
-      pat = con + SLASH + str
-      rts[ pat ] = "#{con}##{act}" 
+      str = str + SLASH + OPEN_P + COLON + chr + CLOSE_P unless chr == 'a' 
     end
+    pat = con + SLASH + str
+puts pat
+    rts[ pat ] = "#{con}##{act}" 
     app::Application.routes.prepend do 
       case vrb
         when 'get'
@@ -50,6 +52,7 @@ DOT = '.'
   def url2array( *paths ) # Splits a url - eg. /new/my/url?param=hello produces ['my', 'url']
     path = (paths.size > 0 ? paths[ 0 ] : nil)
     path = request.fullpath if path.nil? # Useful for testing - you can give it a path - but in a controller it can find request.fullpath
+ puts path
     arr, hsh = arrayandhash( path, {} )
     arr = [] if arr.nil? or arr.size < 2
     arr = arr[ 2 .. -1 ] if arr.size > 1 # Remove the controller name, eg. '/new/foo/bar' becomes ['foo', 'bar'] 
@@ -70,6 +73,7 @@ PARAMS_ERR_END
   def params2hash( *paths ) 
     path, params = analyze( paths )
     path = request.fullpath if path.nil? # Useful for testing - you can give it a path - but in a controller it can find request.fullpath
+ puts path
     arr, hsh = arrayandhash( path, params )
     hsh
   end
@@ -109,9 +113,7 @@ PARAMS_ERR_END
         end
       end 
     end
-    if (defined?( request ) and defined?( request.POST ))
-      request.POST.each { |k, v| hsh[ k ] = v }
-    end
+    request.POST.each { |k, v| hsh[ k ] = v } if (defined?( request ) and defined?( request.POST ))
     return arr, hsh
   end
 	  
