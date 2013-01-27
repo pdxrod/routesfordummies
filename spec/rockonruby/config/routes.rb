@@ -8,11 +8,7 @@ Rockonruby::Application.routes.draw do
   get 'old/:version/:scope/:id/media.:format' => 'old#an_action'
 
 # /new/foo/bar/fubar/ /new/foo/bar/fubar/snafu /new/foo etc.                                                  
-   get 'new/:a'        => 'new#an_action'
-   get 'new/:a/:b'        => 'new#an_action'
-   get 'new/:a/:b/:c'        => 'new#an_action'
-   get 'new/:a/:b/:c/:d'        => 'new#an_action'
-   get 'new/:a/:b/:c/:d/:e'        => 'new#an_action'   
+  get 'new/(:a)/(:b)/(:c)/(:d)/(:e)/(:f)/(:g)/(:h)/(:i)/(:j)/(:k)/(:l)/(:m)/(:n)/(:o)/(:p)/(:q)/(:r)/(:s)/(:t)/(:u)/(:v)/(:w)/(:x)/(:y)' => 'new#an_action'
                                        
 #   get '/:controller(/:action(/:id))'  
 
