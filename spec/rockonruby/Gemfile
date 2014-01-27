@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# https://gist.github.com/2515536
-# Slight mistake - don't ./rails/railties/bin/rails new ...
-
 # http://stackoverflow.com/questions/2425676/rvm-1-9-1-nokogiri
 # brew install libxml2
 # brew link libxml2
@@ -11,18 +8,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.0.1'
 
-######                                                                                             #######
-# gem 'active_record_deprecated_finders', github: 'markmcspadden/active_record_deprecated_finders' #######
-# gem 'journey', '1.0.4'
-# The following were added after moving on from the original release of Rails 4 beta to later versions ###
 gem 'minitest', '~> 4.1'
-# gem 'activerecord-deprecated_finders', github: 'rails/activerecord-deprecated_finders'
-# gem 'active_record_deprecated_finders',  github: 'markmcspadden/active_record_deprecated_finders'
-# gem 'journey'
-
-######                                                                                             #######
-
-# gem 'arel',      github: 'rails/arel'
 gem 'will_paginate', '~> 3.0'
 gem 'rspec-rails'
 gem "factory_girl_rails"
