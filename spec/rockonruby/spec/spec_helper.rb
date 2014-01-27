@@ -16,7 +16,7 @@ class Object
   def use_instantiated_fixtures=( u ) ; end
 end
 
-AR = ENV['RAILS_ROOT']+'/activerecord/lib/active_record.rb'
+AR = 'activerecord/lib/active_record.rb'
 module InactiveRecord
   require AR
   include ActiveRecord
@@ -24,7 +24,7 @@ end
 require AR
 include ActiveRecord
 
-AM = ENV['RAILS_ROOT']+'/activemodel/lib/active_model.rb'
+AM = 'activemodel/lib/active_model.rb'
 class InactiveModel
   require AM
   include ActiveModel

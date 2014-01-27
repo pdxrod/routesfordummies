@@ -6,17 +6,5 @@ Then browse to http://localhost:3002
 
 This site, showing how to use the routesfordummies gem, is also at http://rockonruby.com
 
-To run runtests.sh or startup.sh, you need to set environment RAILS_ROOT to the folder where Rails is installed.
 
-Eg. if it is set to ~/rails-4.0.0.beta,
-$ export RAILS_ROOT=~/rails-4.0.0.beta 
-When you 
-$ ls $RAILS_ROOT
-you should see something like this:
-Gemfile			RELEASING_RAILS.rdoc	activemodel		guides			railties
-Gemfile.lock		Rakefile		activerecord		install.rb		tasks
-RAILS_VERSION		actionmailer		activesupport		load_paths.rb		tools
-README.rdoc		actionpack		ci			rails.gemspec		version.rb
-
-(see config/application.rb, spec/rockonruby/Gemfile and spec/rockonruby/spec/spec_helper.rb for the use of ENV['RAILS_ROOT'])
 

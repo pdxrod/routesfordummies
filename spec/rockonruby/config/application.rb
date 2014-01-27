@@ -2,13 +2,11 @@ require File.expand_path('../boot', __FILE__)
 
 # require 'rails/all'
 # No database: replace the above line with these lines and remove mysql gem etc. from Gemfile     
-raise "Set environment variable RAILS_ROOT to the top of Ruby on Rails - a folder which contains actionpack, actionmailer, etc." if ENV['RAILS_ROOT'].nil?
-require File.expand_path(ENV['RAILS_ROOT']+"/actionpack/lib/action_controller/railtie", __FILE__)
-require File.expand_path(ENV['RAILS_ROOT']+"/actionmailer/lib/action_mailer/railtie", __FILE__)
-# A lot of messing about to get it to not use the database.
-# See http://stackoverflow.com/questions/3954307/rails-3-how-do-i-avoid-database-altogether 
-# and what I actually added above (plus commenting out
-# anything which said config.active_record in any file, and removing mysql from Gemfile).
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "rails/test_unit/railtie"
+require "sprockets/railtie"
+# See http://stackoverflow.com/questions/3954307/rails-3-how-do-i-avoid-database-altogether
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line.
