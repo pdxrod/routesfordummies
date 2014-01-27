@@ -7,51 +7,6 @@ ENV["RAILS_ENV"] ||= 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
 
-class Object
-  def fixture_path ; '.' ; end
-  def transactional_fixtures ; false ; end
-  def instantiated_fixtures ; false ; end
-  def fixture_path=( f ) ; end
-  def use_transactional_fixtures=( t ) ; end
-  def use_instantiated_fixtures=( u ) ; end
-end
-
-AR = 'activerecord/lib/active_record.rb'
-module InactiveRecord
-  require AR
-  include ActiveRecord
-end
-require AR
-include ActiveRecord
-
-AM = 'activemodel/lib/active_model.rb'
-class InactiveModel
-  require AM
-  include ActiveModel
-end
-require AM
-include ActiveModel
-
-old_meths = ActiveModel.methods.sort
-
-# See http://www.ruby-forum.com/topic/2530
-Object.instance_eval{ remove_const :ActiveRecord }
-Object.instance_eval{ remove_const :ActiveModel }
-
-class ActiveModel < InactiveModel
-end
-module ActiveRecord 
-  TestFixtures=InactiveRecord
-end
-
-new_meths = ActiveModel.new.methods.sort
-
-meths = old_meths - new_meths
-raise "The module hasn't got many more methods than the class" unless meths.size > 20
-[ :attr_internal, :attr_internal_accessor, :attr_internal_reader, :attr_internal_writer ].each do |sym|
-  raise "The module doesn't have method :#{sym.to_s}" unless old_meths.include?( sym )
-end
-
 RSpec.configure do |config|
 
   config.treat_symbols_as_metadata_keys_with_true_values = true
