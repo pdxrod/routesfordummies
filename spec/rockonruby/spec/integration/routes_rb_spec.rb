@@ -8,10 +8,6 @@ describe "routesfordummies" do
     puts
   end
 
-  before(:each) do
-    load_schema    
-  end
-
   it "should succeed if it's a routesfordummies params hash" do
     get NEW_PATH
     response.should be_success  

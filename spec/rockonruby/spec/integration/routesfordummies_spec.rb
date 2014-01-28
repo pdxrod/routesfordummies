@@ -3,10 +3,6 @@ require File.expand_path('../../../test/spec_and_test_helper', __FILE__)
 
 describe "routesfordummies" do
 
-  before(:each) do
-    load_schema    
-  end
-
 # Method routes_prepend caused routing error
   it "should fail after a routes prepend with no reload_routes" do
     routes_prepend	  

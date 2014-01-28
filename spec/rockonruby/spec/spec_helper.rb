@@ -23,20 +23,16 @@ end
 
 require 'rspec/rails'
 
-  module ActiveRecord
-    class Base
-      def Base.logger=( l )
-      end
-      def Base.logger
-        Logger.new( File.join(Rails.root, 'log', 'logger.log') ) 
-      end
+module ActiveRecord
+  class Base
+    def Base.logger=(l)
+    end
+
+    def Base.logger
+      Logger.new(File.join(Rails.root, 'log', 'logger.log'))
     end
   end
-
-def load_schema
-# Bug fix for something introduced by the latest edge beta 4 code
-  ActiveRecord::Base.logger = Logger.new( File.join(Rails.root, 'log', 'logger.log') ) 
-
 end
+
 
 
